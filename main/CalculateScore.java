@@ -24,11 +24,11 @@ public class CalculateScore {
 	public CalculateScore(String userInput) {
 		inputString = userInput;
 		totalScore = 0;
-		charArray = new char [CalculateRolls(userInput)];
-		numArray = new int [CalculateRolls(userInput)];
-		FillCharArray(userInput);
-		FillNumArray(charArray);
-		FillCaseArray(userInput);
+		charArray = new char [calculateRolls(userInput)];
+		numArray = new int [calculateRolls(userInput)];
+		fillCharArray(userInput);
+		fillNumArray(charArray);
+		fillCaseArray(userInput);
 	}
 	
     /**
@@ -38,7 +38,7 @@ public class CalculateScore {
     * @param userInput an instance of a bowling game 
     * @return counter the number of Rolls in one game
     */
-	public int CalculateRolls(String userInput) {
+	public int calculateRolls(String userInput) {
 		int counter = 0;
     int frameC = 0;
    	for (int i = 0; i < userInput.length(); i++) {
@@ -53,12 +53,12 @@ public class CalculateScore {
 	
 	
   /**
-  * The FillCharArray method fills the charArray with the chars from
+  * The fillCharArray method fills the charArray with the chars from
   * the user input, excluding '-'
   * @param userInput an instance of a bowling game 
   * @return none
   */
-	private void FillCharArray(String userInput) {
+	private void fillCharArray(String userInput) {
 		int counter = 0;
 		for (int i = 0; i < userInput.length(); i++) {
 			if (userInput.charAt(i) != '-') {
@@ -69,13 +69,13 @@ public class CalculateScore {
 	}
 
   /**
-  * The FillNumArray method fills the numArray with converted numbers
+  * The fillNumArray method fills the numArray with converted numbers
   * from the char array. This numArray does not contain X or /, only
   * integer values
   * @param charArray an array filled with characters, including 1-9, X, /
   * @return none 
   */
-	private void FillNumArray(char[] charArray) {
+	private void fillNumArray(char[] charArray) {
 		for (int i = 0; i < charArray.length; i++) {
       // spares are calculated by taking subtracting 10 from the number before /
 			if (charArray[i] == '/') {
@@ -89,14 +89,14 @@ public class CalculateScore {
 	}
 	
   /**
-  * The FillCaseArray method fills the caseArray with the different cases
+  * The fillCaseArray method fills the caseArray with the different cases
   * of frames. There are 5 different cases of frames, and this method
   * detects each case and inserts it into an array of 10, representing the
   * 10 frames in a single game
   * @param userInput an instance of a bowling game 
   * @return none
   */
-	private void FillCaseArray(String userInput) {
+	private void fillCaseArray(String userInput) {
 		int counter = 0;
 		int arrayCounter = 0;
 		int frameCount = 0;       
@@ -167,14 +167,14 @@ public class CalculateScore {
 	}
 
   /**
-  * The GetTotal method calculates the total points in a game
+  * The getTotal method calculates the total points in a game
   * of frames. It iterates through the caseArray (which contains the
   * one of five different cases for each frame) and calculates
   * the score for that game
   * @param none
   * @return totalScore  the final score of the game
   */
-	public int GetTotal() {
+	public int getTotal() {
 		int	arrayIndex = 0;
 		int tempTotal = 0;
 		for (int i = 0; i < caseArray.length; i++) {
