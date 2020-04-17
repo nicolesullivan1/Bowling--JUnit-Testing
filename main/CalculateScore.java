@@ -18,7 +18,8 @@ public class CalculateScore {
    * Sets up charArray, an array filled with the input chars without -
    * Sets up numArray, an array filled with the numbers from input excluding / and X
    * Sets up caseArray, an array filled with the five different cases
-   * @param userInput an instance of a bowling game 
+   * @param userInput an instance of a bowling game
+   * @return none 
 	 */
 	public CalculateScore(String userInput) {
 		inputString = userInput;
@@ -55,6 +56,7 @@ public class CalculateScore {
   * The FillCharArray method fills the charArray with the chars from
   * the user input, excluding '-'
   * @param userInput an instance of a bowling game 
+  * @return none
   */
 	private void FillCharArray(String userInput) {
 		int counter = 0;
@@ -70,7 +72,8 @@ public class CalculateScore {
   * The FillNumArray method fills the numArray with converted numbers
   * from the char array. This numArray does not contain X or /, only
   * integer values
-  * @param charArray an array filled with characters, including 1-9, X, / 
+  * @param charArray an array filled with characters, including 1-9, X, /
+  * @return none 
   */
 	private void FillNumArray(char[] charArray) {
 		for (int i = 0; i < charArray.length; i++) {
@@ -91,6 +94,7 @@ public class CalculateScore {
   * detects each case and inserts it into an array of 10, representing the
   * 10 frames in a single game
   * @param userInput an instance of a bowling game 
+  * @return none
   */
 	private void FillCaseArray(String userInput) {
 		int counter = 0;
