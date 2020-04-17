@@ -6,7 +6,8 @@ class Main {
     /**
     * @author nicolesullivan
     * This main method contains a call to   
-    * TestRunner, which tests functionlity  
+    * TestRunner, which tests the functionlity 
+    * of the program 
     * @param args Unused.
     * @return Nothing.
     * @since   2020-04-02 
